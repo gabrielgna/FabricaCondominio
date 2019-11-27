@@ -28,12 +28,18 @@
 	}
 </script>
 </head>
+ <style type="text/css">
+        .form-signin {
+            margin: 0 auto;
+            max-width: 330px;
+            padding: 15px;
+        }
+    </style>
 
-
-<body>
+<body style="padding-top: 60px; background-color: #add;">
 	<form action="j_spring_security_check" method="post">
 
-		<div class="span4 sidebar">
+		<div class="form-signin" >
 			<div class="well quickSignupForm">
 				<h3>Acesso ao Sistema</h3>
 				<%
@@ -45,7 +51,7 @@
 					name="j_username" class="span3" /> <label>Senha</label> <input
 					name="j_password" type="password" class="span3" /> <input
 					class="btn btn-large btn-success btnSignup" type="submit"
-					value="Entraaaar" />
+					value="Entrar" />
 			</div>
 
 		</div>

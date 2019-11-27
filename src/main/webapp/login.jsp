@@ -45,7 +45,7 @@
 					name="j_username" class="span3" /> <label>Senha</label> <input
 					name="j_password" type="password" class="span3" /> <input
 					class="btn btn-large btn-success btnSignup" type="submit"
-					value="Entraar" />
+					value="Entraaaar" />
 			</div>
 
 		</div>

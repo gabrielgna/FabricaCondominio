@@ -1,0 +1,13 @@
+#area
+{
+   margin: auto;
+  width: 80%;
+  background: #fff;
+  border: 3px solid #73AD21;
+  padding: 10px;
+}
+#area #formulario
+{
+  
+  display:block;   
+}

@@ -2,7 +2,6 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:b="http://bootsfaces.net/ui"
-	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:p="http://primefaces.org/ui">
 <h:head>
@@ -31,12 +30,6 @@
 				<div id="j_idt7_inner"
 					class="collapse navbar-collapse navbar-ex1-collapse">
 					<ul id="j_idt8" class="nav navbar-nav navbar-right ">
-						<li id="j_idt9" style="cursor: pointer;"><a href="#"
-							role="menuitem" tabindex="0">Dashboard</a></li>
-						<li id="j_idt10" style="cursor: pointer;"><a href="#"
-							role="menuitem" tabindex="0">Settings</a></li>
-						<li id="j_idt11" style="cursor: pointer;"><a href="#"
-							role="menuitem" tabindex="0">Profile</a></li>
 						<li id="j_idt12" style="cursor: pointer;"><a href="#"
 							role="menuitem" tabindex="0">Help</a></li>
 					</ul>
@@ -61,9 +54,7 @@
 			<div id="j_idt18" class="row">
 				<div id="j_idt19" class="sidebar col-md-2 col-sm-3 ">
 					<ul id="j_idt20" class="nav nav-list ">
-						<li id="j_idt30" class="dropdown-header" role="presentation"><b:navLink
-								href="http://www.bootsfaces.net" icon="home" icon-size="4x">
-							</b:navLink></li>
+
 
 						<li id="j_idt21" class="dropdown-header" role="presentation">
 							<H2>Cadastro</H2>
@@ -102,59 +93,61 @@
 				</b:row>
 
 
-
-				<div id="BotosComFuncoes" class="btnNovoPesquisar">
-
-
-					<div id="j_idt39" class="placeholder col-xs-6 col-sm-3 ">
-						 <b:button value="Novo" icon="download" look="warning"/>
-						 <b:button value="Pesquisar" iconAwesome="cloud-download" look="warning"/>
+				<b:form>
+					<div id="BotosComFuncoes" class="btnNovo">
+						<b:button value="Novo" icon="download" look="warning" />
 					</div>
-					
-
-
-				</div>
-
-				<b:form horizontal="true">
-					<div id="Formularioladoesquerdo" class="formesquerdo">
-
-						<h:outputText value="Código"></h:outputText>
-						<br />
-						<h:outputText value="#{AreaDeLazerControl.areadelazer.id }" />
-						<br />
+					<div id="BotosComFuncao" class="btnPesquisar">
+						<b:button value="Pesquisar" iconAwesome="cloud-download"
+							look="warning" />
+					</div>
+				</b:form>
 
 
 
-						<b:panelGrid columns="2">
-							<b:inputText value="" label="Quadra/Bloco" />
-							<b:inputText value="" label="Número" render-label="true" />
-							<b:inputText value="" label="Tamanho" />
+
+				<b:form>
+					<div id="Formularioladoesquerda" class="formimputs">
+						<b:panel contentDisabled="true">
+							<font style='font-weight: bold;'> Código </font>
+
+							<h:outputText
+								value="            #{AreaDeLazerControl.areadelazer.id }" />
+							<br />
+							<br />
+
+
+							<b:panelGrid columns="2">
+								<b:inputText value="" label="Quadra/Bloco" size="25"
+									maxlength="5" />
+								<b:inputText value="" label="Número" render-label="true"
+									maxlength="7" />
+							</b:panelGrid>
+							<b:inputText value="" label="Tamanho" mask="numeric" />
 							<b:inputText value="" mask="dd/mm/yyyy" label="Data (dd/mm/yyyy)"
 								render-label="true" />
 
-						</b:panelGrid>
 
-
-
-
-
+						</b:panel>
 					</div>
 				</b:form>
+
+
+
 
 				<div id="botaosalvar" class="botsalvar">
 					<b:button look="success" value="  Salvar" />
 				</div>
-				
+
 				<div id="botaocancelar" class="botcancelar">
-					<b:button look="danger" value="Cancelar"/>
+					<b:button look="danger" value="Cancelar" />
 				</div>
-				
+
+
+
 			</div>
 		</div>
 
-
-		<script type="text/javascript"
-			src="/Examples/javax.faces.resource/js/collapse.js.jsf?ln=bsf"></script>
 	</body>
 
 </h:body>

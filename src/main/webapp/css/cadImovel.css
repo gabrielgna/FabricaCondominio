@@ -17,20 +17,21 @@
 .formimputs {
 	position: absolute;
 	left: 330px;
-	top: 1550px;
+	top: 100px;
 	
 }
 
 .botsalvar {
 	position: absolute;
-	left: 750px;
-	top: 450px;
+	left: 350px;
+	top: 295px;
+
 }
 
 .botcancelar {
 	position: absolute;
-	left: 850px;
-	top: 450px;
+	left: 425px;
+	top: 295px;
 }
 
 .btnNovo {

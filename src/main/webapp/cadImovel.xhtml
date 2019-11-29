@@ -108,7 +108,7 @@
 
 				<b:form>
 					<div id="Formularioladoesquerda" class="formimputs">
-						<b:panel contentDisabled="true">
+						<b:panel contentDisabled="false" >
 							<font style='font-weight: bold;'> Código </font>
 
 							<h:outputText
@@ -127,21 +127,21 @@
 							<b:inputText value="" mask="dd/mm/yyyy" label="Data (dd/mm/yyyy)"
 								render-label="true" />
 
+						
 
 						</b:panel>
+						
+						<div id="botaosalvar" class="botsalvar">
+								<b:button look="success" value="  Salvar" />
+							</div>
+
+							<div id="botaocancelar" class="botcancelar">
+								<b:button look="danger" value="Cancelar" />
+							</div>
 					</div>
 				</b:form>
 
 
-
-
-				<div id="botaosalvar" class="botsalvar">
-					<b:button look="success" value="  Salvar" />
-				</div>
-
-				<div id="botaocancelar" class="botcancelar">
-					<b:button look="danger" value="Cancelar" />
-				</div>
 
 
 

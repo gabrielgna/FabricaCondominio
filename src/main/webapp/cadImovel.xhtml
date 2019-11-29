@@ -88,7 +88,7 @@
 				<b:row styleClass="show-grid">
 					<b:column col-xs="4" col-sm="4" col-md="4"></b:column>
 					<b:column col-xs="4" col-sm="4" col-md="4">
-						<h1>Cadastro de Imóvel Minha Pica</h1>
+						<h1>Cadastro de Imóvel</h1>
 					</b:column>
 				</b:row>
 
@@ -108,24 +108,23 @@
 
 				<b:form>
 					<div id="Formularioladoesquerda" class="formimputs">
-						<b:panel contentDisabled="false" >
+						<b:panel id="gabrielehumbaitola" contentDisabled="false" >
 							<font style='font-weight: bold;'> Código </font>
 
 							<h:outputText
-								value="            #{AreaDeLazerControl.areadelazer.id }" />
+								value="            #{ImovelControl.imovel.id }" />
 							<br />
 							<br />
 
 
 							<b:panelGrid columns="2">
-								<b:inputText value="" label="Quadra/Bloco" size="25"
+								<b:inputText value="#{ImovelControl.imovel.bloco }" label="Quadra/Bloco" size="25"
 									maxlength="5" />
-								<b:inputText value="" label="Número" render-label="true"
+								<b:inputText value="#{ImovelControl.imovel.numero }" label="Número" render-label="true"
 									maxlength="7" />
 							</b:panelGrid>
-							<b:inputText value="" label="Tamanho" mask="numeric" />
-							<b:inputText value="" mask="dd/mm/yyyy" label="Data (dd/mm/yyyy)"
-								render-label="true" />
+							<b:inputText value="#{ImovelControl.imovel.tamanholote }" label="Tamanho" mask="numeric" />
+							
 
 						
 

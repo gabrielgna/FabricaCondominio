@@ -7,7 +7,7 @@
       maxActive="10" 
       maxIdle="3" 
       name="jdbc/primefaces" 
-      password="quesenha741"
+      password="123456"
       type="javax.sql.DataSource" 
       url="jdbc:postgresql://localhost/primefaces"
       username="postgres" />

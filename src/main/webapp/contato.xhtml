@@ -31,15 +31,22 @@
 			<f:facet name="header">
 				<h:outputText value="Lista de Contatos"></h:outputText>
 			</f:facet>
-			<p:column sortBy="#{cont.nome }">	
-			
-			<p:cellEditor>
-			 <f:facet name="output"><h:outputText value="#{cont.nome }" /></f:facet>
-             <f:facet name="input"><p:inputText id="modelInput" value="#{cont.nome }" style="width:100%" label="Nome"/></f:facet>
-			</p:cellEditor>
-				
+			<p:column sortBy="#{cont.nome }">
+				<f:facet name="header">
+					<h:outputText value="Nome"></h:outputText>
+				</f:facet>
+				<p:cellEditor>
+					<f:facet name="output">
+						<h:outputText value="#{cont.nome }" />
+					</f:facet>
+					<f:facet name="input">
+						<p:inputText id="modelInput" value="#{cont.nome }"
+							style="width:100%" label="Nome" />
+					</f:facet>
+				</p:cellEditor>
+
 			</p:column>
-			
+
 			<p:column sortBy="#{cont.telefone }">
 				<f:facet name="header">
 					<h:outputText value="Telefone"></h:outputText>

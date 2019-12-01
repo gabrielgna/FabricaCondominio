@@ -1,6 +1,7 @@
 package br.com.senai.fatesg.primefaces.entidade;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -26,19 +27,51 @@ public class Cadastrados {
 	@Column(nullable = false)
 	private String cpf;
 	
-	@OneToMany
-	@JoinColumn(name="movimentacao_id")
-	private List<Movimentacao> movimentacoes;
 	
 	@OneToMany
 	@JoinColumn(name="pessoa_id")
 	private List<PessoaImovelTipo> pessoaimoveltipo;
 	
-	private String usuario;
-	private String senha;
 	private String email;
+	private String nome;
+	private String celular;
+	private Date datadenascimento;
+	private int statuscadastro;
 	
 	
+	public List<PessoaImovelTipo> getPessoaimoveltipo() {
+		return pessoaimoveltipo;
+	}
+	public void setPessoaimoveltipo(List<PessoaImovelTipo> pessoaimoveltipo) {
+		this.pessoaimoveltipo = pessoaimoveltipo;
+	}
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public String getCelular() {
+		return celular;
+	}
+	public void setCelular(String celular) {
+		this.celular = celular;
+	}
+	public Date getDatadenascimento() {
+		return datadenascimento;
+	}
+	public void setDatadenascimento(Date datadenascimento) {
+		this.datadenascimento = datadenascimento;
+	}
+	public int getStatuscadastro() {
+		return statuscadastro;
+	}
+	public void setStatuscadastro(int statuscadastro) {
+		this.statuscadastro = statuscadastro;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
 	public String getCpf() {
 		return cpf;
 	}
@@ -46,24 +79,7 @@ public class Cadastrados {
 		this.cpf = cpf;
 	}
 	
-	public List<Movimentacao> getMovimentacoes() {
-		return movimentacoes;
-	}
-	public void setMovimentacoes(List<Movimentacao> movimentacoes) {
-		this.movimentacoes = movimentacoes;
-	}
-	public String getUsuario() {
-		return usuario;
-	}
-	public void setUsuario(String usuario) {
-		this.usuario = usuario;
-	}
-	public String getSenha() {
-		return senha;
-	}
-	public void setSenha(String senha) {
-		this.senha = senha;
-	}
+
 	public String getEmail() {
 		return email;
 	}

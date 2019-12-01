@@ -49,6 +49,12 @@ public class AreaDeLazerControl {
 			UtilFaces.addMensagemFaces(e);
 		}
 	}
+	
+	public String cadastro(){
+		System.out.println("entrou metodo");
+		return "primefaces/cadAreaLazer";
+		
+	}
 
 	public AreaDeLazer getAreadelazer() {
 		return areadelazer;

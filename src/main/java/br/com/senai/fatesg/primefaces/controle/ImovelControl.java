@@ -9,7 +9,6 @@ import javax.faces.event.ActionEvent;
 import javax.inject.Named;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Scope;
 
 import br.com.ambientinformatica.ambientjsf.util.UtilFaces;
 
@@ -17,7 +16,6 @@ import br.com.senai.fatesg.primefaces.entidade.Imovel;
 import br.com.senai.fatesg.primefaces.persistencia.ImovelDao;
 
 @Named("ImovelControl")
-@Scope("conversationImovel")
 public class ImovelControl {
 
 	private Imovel imovel = new Imovel();

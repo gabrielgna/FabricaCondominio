@@ -18,7 +18,7 @@ FROM
      "cadastrados" cadastrados INNER JOIN "movimentacao" movimentacao ON cadastrados."id" = movimentacao."cadastrados_id"
      INNER JOIN "pessoaimoveltipo" pessoaimoveltipo ON movimentacao."id" = pessoaimoveltipo."imovel_id"
      INNER JOIN "imovel" imovel ON pessoaimoveltipo."imovel_id" = imovel."id"
-where cadastrados.id = $P{idCadastrado}]]>
+]]>
 	</queryString>
 	<field name="cadastrados_nome" class="java.lang.String"/>
 	<field name="movimentacao_horario" class="java.sql.Time"/>

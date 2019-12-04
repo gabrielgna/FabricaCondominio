@@ -6,7 +6,7 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:p="http://primefaces.org/ui">
 <h:head>
-	<title>Cadastro Imovel</title>
+	<title>Cadastro Empresa</title>
 	<link href="css/cadAreaLazerestilo.css" rel="stylesheet" />
 </h:head>
 <h:body style="padding-top: 60px">
@@ -56,7 +56,7 @@
 				class="sidebar col-md-2 col-sm-3 ">
 				<ul id="j_idt20" class="nav nav-list ">
 					<li id="j_idt30" class="dropdown-header" role="presentation"><b:navLink
-							href="TelaInicial.xhtml" icon="home" icon-size="4x">
+							href="http://www.bootsfaces.net" icon="home" icon-size="4x">
 						</b:navLink></li>
 
 					<li id="j_idt21" class="dropdown-header" role="presentation">
@@ -68,12 +68,14 @@
       <b:navLink value="Associado" href="#"></b:navLink>
       <b:navLink value="Prestador de Serviço" href="#"></b:navLink>
     </b:dropMenu></li>
-					<li id="j_idt23" style="cursor: pointer;"><a href="cadImovel.xhtml"
-						role="menuitem" tabindex="0">Imovel</a></li>
-					<li id="j_idt24" style="cursor: pointer;"><a href="Arealazer.xhtml"
-						role="menuitem" tabindex="0">Area de Lazer</a></li>
-					<li id="j_idt25" style="cursor: pointer;"><a href="cadEmpresa.xhtml"
-						role="menuitem" tabindex="0">Empresa Prestadora</a></li>
+					<li id="j_idt23" style="cursor: pointer;"><a
+						href="cadImovel.xhtml" role="menuitem" tabindex="0">Imovel</a></li>
+					<li id="j_idt24" style="cursor: pointer;"><a
+						href="Arealazer.xhtml" role="menuitem" tabindex="0">Area de
+							Lazer</a></li>
+					<li id="j_idt25" style="cursor: pointer;"><a
+						href="cadEmpresa.xhtml" role="menuitem" tabindex="0">Empresa
+							Prestadora</a></li>
 					<li id="j_idt26" class="dropdown-header" role="presentation">
 						<H2>Relatorios</H2>
 					</li>
@@ -89,53 +91,47 @@
 			<div id="j_idt36"
 				class="main col-md-10 col-md-offset-2 col-sm-9 col-sm-offset-3 ">
 				<b:row styleClass="show-grid">
-					<b:column col-xs="4" col-sm="4" col-md="4"></b:column>
+					<b:column col-xs="4" col-sm="4" col-md="4" />
 					<b:column col-xs="4" col-sm="4" col-md="4">
-						<h1>Imovel</h1>
+						<h1>Empresa</h1>
 					</b:column>
 				</b:row>
 				<div id="j_idt38" class="row placeholders">
 
 					<div id="j_idt39" class="placeholder col-xs-6 col-sm-6 ">
-						<b:button value="Cadastro" href="cadImovel.xhtml" />
+						<b:button value="Novo" href="cadEmpresa.xhtml" />
 					</div>
 					<div id="j_idt41" class="placeholder col-xs-6 col-sm-3 ">
-						<b:button value="Listar Imoveis" href="Imovel.xhtml" />
+						<b:button value="Listar Empresas" href="Empresa.xhtml" />
 					</div>
 				</div>
-				<b:form>
-					<div id="Formularioladoesquerda" class="formimputs">
-						<b:panel id="cadastroimovelpanel" contentDisabled="false">
-							<font style='font-weight: bold;'> Código </font>
+				<b:form id="formulario"
+					class="main col-md-10 col-md-offset-2 col-sm-9 col-sm-offset-3 "
+					horizontal="true">
 
-							<h:outputText value="            #{ImovelControl.imovel.id }" />
-							<br />
-							<br />
+					<h:outputText value="Nome Fantasia"></h:outputText>
+					<b:inputText large-screen="one-third"
+						value="#{EmpresaControl.empresa.nomefantasia }" />
 
-							<b:panelGrid columns="2">
-								<b:inputText value="#{ImovelControl.imovel.bloco }"
-									label="Quadra/Bloco" size="25" maxlength="5" />
-								<b:inputText value="#{ImovelControl.imovel.numero }"
-									label="Número" render-label="true" maxlength="7" />
-							</b:panelGrid>
-							<b:inputText value="#{ImovelControl.imovel.tamanholote }"
-								label="Tamanho" mask="numeric" />
+					<h:outputText value="CNPJ"></h:outputText>
+					<b:inputText large-screen="two-thirds"
+						value="#{EmpresaControl.empresa.CNPJ }" />
 
-						</b:panel>
+					<h:outputText value="Endereco"></h:outputText>
+					<b:inputText large-screen="two-thirds"
+						value="#{EmpresaControl.empresa.endereco }" />
 
+					<h:outputText value="Razao Social"></h:outputText>
+					<b:inputText large-screen="two-thirds"
+						value="#{EmpresaControl.empresa.razaosocial }" />
 
-						<div id="j_idt38" class="row placeholders">
-							<div id="botaosalvar" class="placeholder col-xs-6 col-sm-6">
-							
-							<b:commandButton value="Salvar" update="cadastroimovelpanel"
-                 actionListener="#{ImovelControl.confirmar}" look="success" />
-							</div>
+					<h:outputText value="Telefone"></h:outputText>
+					<b:inputText large-screen="two-thirds"
+						value="#{EmpresaControl.empresa.telefone }" />
+						
+					<b:commandButton  update="formulario" value="Confirmar"
+						actionListener="#{EmpresaControl.incluir }" look="success" />
 
-							<div id="botaocancelar" class="placeholder col-xs-6 col-sm-3">
-								<b:button look="danger" value="Cancelar" />
-							</div>
-						</div>
-					</div>
 				</b:form>
 			</div>
 		</div>

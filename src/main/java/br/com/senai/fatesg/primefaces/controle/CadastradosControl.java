@@ -4,24 +4,29 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
+import javax.faces.bean.SessionScoped;
 import javax.faces.event.ActionEvent;
 
 import javax.inject.Named;
 
+import org.hibernate.EntityMode;
+import org.hibernate.Query;
+import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 
 import br.com.ambientinformatica.ambientjsf.util.UtilFaces;
-
 import br.com.senai.fatesg.primefaces.entidade.Cadastrados;
 import br.com.senai.fatesg.primefaces.persistencia.CadastradosDao;
+import br.com.senai.fatesg.primefaces.persistencia.CadastradosDaoJpa;
 
 @Named("CadastradosControl")
 @Scope("conversation")
-public class CadastradosControl {
+public class CadastradosControl{
 
+	
 	private Cadastrados cadastrado = new Cadastrados();
-
+	
 	@Autowired
 	private CadastradosDao cadastradosDao;
 
@@ -62,4 +67,7 @@ public class CadastradosControl {
 		return cadastrados;
 	}
 
+	
+
 }
+

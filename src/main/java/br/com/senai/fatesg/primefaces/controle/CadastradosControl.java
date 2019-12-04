@@ -4,16 +4,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
+import javax.faces.bean.SessionScoped;
 import javax.faces.event.ActionEvent;
 
 import javax.inject.Named;
 import javax.persistence.Query;
 
+import org.hibernate.EntityMode;
+import org.hibernate.Query;
+import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 
 import br.com.ambientinformatica.ambientjsf.util.UtilFaces;
-
 import br.com.senai.fatesg.primefaces.entidade.Cadastrados;
 import br.com.senai.fatesg.primefaces.entidade.PessoaImovelTipo;
 import br.com.senai.fatesg.primefaces.persistencia.CadastradosDao;
@@ -27,6 +30,7 @@ public class CadastradosControl {
 
 	private PessoaImovelTipo pessoatipo = new PessoaImovelTipo();
 	//daos
+  
 	@Autowired
 	private CadastradosDao cadastradosDao;
 	
@@ -86,4 +90,7 @@ public class CadastradosControl {
 		return cadastrados;
 	}
 
+	
+
 }
+

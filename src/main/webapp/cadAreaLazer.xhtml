@@ -10,62 +10,63 @@
 	<link href="css/cadAreaLazerestilo.css" rel="stylesheet" />
 </h:head>
 <h:body style="padding-top: 60px">
-	
-		<nav id="j_idt7" class="navbar navbar-inverse navbar-fixed-top"
-			role="navigation">
-			<div class="container-fluid">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse"
-						data-target="#j_idt7_inner">
-						<span class="sr-only">Toggle navigation</span><span
-							class="icon-bar"></span><span class="icon-bar"></span><span
-							class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand" href="#"><span>Portaria Gestion</span></a>
-				</div>
-				<div id="j_idt7_inner"
-					class="collapse navbar-collapse navbar-ex1-collapse">
-					<ul id="j_idt8" class="nav navbar-nav navbar-right ">
-						<li id="j_idt9" style="cursor: pointer;"><a href="#"
-							role="menuitem" tabindex="0">Dashboard</a></li>
-						<li id="j_idt10" style="cursor: pointer;"><a href="#"
-							role="menuitem" tabindex="0">Settings</a></li>
-						<li id="j_idt11" style="cursor: pointer;"><a href="#"
-							role="menuitem" tabindex="0">Profile</a></li>
-						<li id="j_idt12" style="cursor: pointer;"><a href="#"
-							role="menuitem" tabindex="0">Help</a></li>
-					</ul>
-					<form id="j_idt13" name="j_idt13" method="post"
-						action="/Examples/dashboard.jsf" class="navbar-form navbar-right"
-						enctype="application/x-www-form-urlencoded">
 
-
-						<div class="form-group">
-							<div id="j_idt13:j_idt15" class="form-group "></div>
-						</div>
-
-					</form>
-				</div>
+	<nav id="j_idt7" class="navbar navbar-inverse navbar-fixed-top"
+		role="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#j_idt7_inner">
+					<span class="sr-only">Toggle navigation</span><span
+						class="icon-bar"></span><span class="icon-bar"></span><span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#"><span>Portaria Gestion</span></a>
 			</div>
-		</nav>
+			<div id="j_idt7_inner"
+				class="collapse navbar-collapse navbar-ex1-collapse">
+				<ul id="j_idt8" class="nav navbar-nav navbar-right ">
+					<li id="j_idt9" style="cursor: pointer;"><a href="#"
+						role="menuitem" tabindex="0">Dashboard</a></li>
+					<li id="j_idt10" style="cursor: pointer;"><a href="#"
+						role="menuitem" tabindex="0">Settings</a></li>
+					<li id="j_idt11" style="cursor: pointer;"><a href="#"
+						role="menuitem" tabindex="0">Profile</a></li>
+					<li id="j_idt12" style="cursor: pointer;"><a href="#"
+						role="menuitem" tabindex="0">Help</a></li>
+				</ul>
+				<form id="j_idt13" name="j_idt13" method="post"
+					action="/Examples/dashboard.jsf" class="navbar-form navbar-right"
+					enctype="application/x-www-form-urlencoded">
 
 
-		<div id="j_idt17" class="container-fluid">
-			<div id="j_idt18" class="row">
-				<div id="j_idt19" style="background-color:#222222" class="sidebar col-md-2 col-sm-3 ">
-					<ul id="j_idt20" class="nav nav-list ">
-						<li id="j_idt30" class="dropdown-header" role="presentation" ><b:navLink
-								href="http://www.bootsfaces.net" icon="home" icon-size="4x">
-							</b:navLink></li>
+					<div class="form-group">
+						<div id="j_idt13:j_idt15" class="form-group "></div>
+					</div>
 
-						<li id="j_idt21" class="dropdown-header" role="presentation">
-							<H2>Cadastro</H2>
-						</li>
-						<li id="j_idt22" class="active" style="cursor: pointer;"><b:dropMenu
-								value="Pessoas">
+				</form>
+			</div>
+		</div>
+	</nav>
+
+
+	<div id="j_idt17" class="container-fluid">
+		<div id="j_idt18" class="row">
+			<div id="j_idt19" style="background-color: #222222"
+				class="sidebar col-md-2 col-sm-3 ">
+				<ul id="j_idt20" class="nav nav-list ">
+					<li id="j_idt30" class="dropdown-header" role="presentation"><b:navLink
+							href="http://www.bootsfaces.net" icon="home" icon-size="4x">
+						</b:navLink></li>
+
+					<li id="j_idt21" class="dropdown-header" role="presentation">
+						<H2>Cadastro</H2>
+					</li>
+					<li id="j_idt22" class="active" style="cursor: pointer;"><b:dropMenu
+							value="Pessoas">
       <b:navLink value="Morador" href="#"></b:navLink>
       <b:navLink value="Associado" href="#"></b:navLink>
-      <b:navLink value="Prestador de Serviço" href="#"></b:navLink>
+      <b:navLink value="Prestador de Serviço" href="cadPrestadorServ.xhtml"></b:navLink>
     </b:dropMenu></li>
 						<li id="j_idt23" style="cursor: pointer;"><a href="cadImovel.xhtml"
 							role="menuitem" tabindex="0">Imovel</a></li>
@@ -85,47 +86,50 @@
 					</ul>
 				</div>
 
-				<div id="j_idt36"
-					class="main col-md-10 col-md-offset-2 col-sm-9 col-sm-offset-3 ">
-					<b:row styleClass="show-grid">
-						<b:column col-xs="4" col-sm="4" col-md="4"/>
-						<b:column col-xs="4" col-sm="4" col-md="4">
-							<h1>Area Lazer</h1>
-						</b:column>
-					</b:row>
-					<div id="j_idt38" class="row placeholders">
+			<div id="j_idt36"
+				class="main col-md-10 col-md-offset-2 col-sm-9 col-sm-offset-3 ">
+				<b:row styleClass="show-grid">
+					<b:column col-xs="4" col-sm="4" col-md="4" />
+					<b:column col-xs="4" col-sm="4" col-md="4">
+						<h1>Area Lazer</h1>
+					</b:column>
+				</b:row>
+				<div id="j_idt38" class="row placeholders">
 
-						<div id="j_idt39" class="placeholder col-xs-6 col-sm-6 ">
-							<b:button value="Cadastro" href="cadAreaLazer.xhtml" />
-						</div>
-						<div id="j_idt41" class="placeholder col-xs-6 col-sm-3 ">
-							<b:button value="Listar Areas de Lazer"
-							href="Arealazer.xhtml"/>
-						</div>
+					<div id="j_idt39" class="placeholder col-xs-6 col-sm-6 ">
+						<b:button value="Cadastro" href="cadAreaLazer.xhtml" />
 					</div>
-					<b:form id="formulario" class="main col-md-10 col-md-offset-2 col-sm-9 col-sm-offset-3 " horizontal="true">
-
-						<h:outputText value="Nome"></h:outputText>
-						<b:inputText large-screen="one-third" value="#{AreaDeLazerControl.areadelazer.nome }"  />
-
-						<h:outputText value="Local"></h:outputText>
-						<b:inputText large-screen="two-thirds"  value="#{AreaDeLazerControl.areadelazer.local }" />
-
-						<h:outputText value="Código"></h:outputText>
-						<br />
-						<h:outputText value="#{AreaDeLazerControl.areadelazer.id }" />
-						<br />
-
-						<b:commandButton value="Confirmar" update="formulario"
-                 actionListener="#{AreaDeLazerControl.confirmar }" look="success" />
-
-					</b:form>
+					<div id="j_idt41" class="placeholder col-xs-6 col-sm-3 ">
+						<b:button value="Listar Areas de Lazer" href="Arealazer.xhtml" />
+					</div>
 				</div>
+				<b:form id="formulario"
+					class="main col-md-10 col-md-offset-2 col-sm-9 col-sm-offset-3 "
+					horizontal="true">
+
+					<h:outputText value="Nome"></h:outputText>
+					<b:inputText large-screen="one-third"
+						value="#{AreaDeLazerControl.areadelazer.nome }" />
+
+					<h:outputText value="Local"></h:outputText>
+					<b:inputText large-screen="two-thirds"
+						value="#{AreaDeLazerControl.areadelazer.local }" />
+					<div id="j_idt39" class="placeholder col-xs-6 col-sm-6 ">
+					<b:commandButton value="Confirmar" update="formulario"
+						actionListener="#{AreaDeLazerControl.confirmar }" look="success" />
+					</div>
+					<div id="j_idt41" class="placeholder col-xs-6 col-sm-3">
+						<b:button value="Cancelar" href="cadAreaLazer.xhtml" look="danger"/>	
+					</div>
+
+
+				</b:form>
 			</div>
 		</div>
+	</div>
 
-		<script type="text/javascript"
-			src="/Examples/javax.faces.resource/js/collapse.js.jsf?ln=bsf"></script>
-	
+	<script type="text/javascript"
+		src="/Examples/javax.faces.resource/js/collapse.js.jsf?ln=bsf"></script>
+
 </h:body>
 </html>

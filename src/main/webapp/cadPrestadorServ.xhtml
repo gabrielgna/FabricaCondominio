@@ -6,7 +6,7 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:p="http://primefaces.org/ui">
 <h:head>
-	<title>Cadastro Imovel</title>
+	<title>Cadastro Prestador de Serviço</title>
 	<link href="css/cadAreaLazerestilo.css" rel="stylesheet" />
 </h:head>
 <h:body style="padding-top: 60px">
@@ -72,7 +72,7 @@
 						role="menuitem" tabindex="0">Imovel</a></li>
 					<li id="j_idt24" style="cursor: pointer;"><a href="Arealazer.xhtml"
 						role="menuitem" tabindex="0">Area de Lazer</a></li>
-					<li id="j_idt25" style="cursor: pointer;"><a href="cadEmpresa.xhtml"
+					<li id="j_idt25" style="cursor: pointer;"><a href="#"
 						role="menuitem" tabindex="0">Empresa Prestadora</a></li>
 					<li id="j_idt26" class="dropdown-header" role="presentation">
 						<H2>Relatorios</H2>
@@ -91,7 +91,7 @@
 				<b:row styleClass="show-grid">
 					<b:column col-xs="4" col-sm="4" col-md="4"></b:column>
 					<b:column col-xs="4" col-sm="4" col-md="4">
-						<h1>Imovel</h1>
+						<h1>Cadastro de Prestador de Serviços</h1>
 					</b:column>
 				</b:row>
 				<div id="j_idt38" class="row placeholders">
@@ -100,7 +100,7 @@
 						<b:button value="Cadastro" href="cadImovel.xhtml" />
 					</div>
 					<div id="j_idt41" class="placeholder col-xs-6 col-sm-3 ">
-						<b:button value="Listar Imoveis" href="Imovel.xhtml" />
+						<b:button value="Listar Prestadores" href="ListPrestServ.xhtml" />
 					</div>
 				</div>
 				<b:form>
@@ -113,10 +113,10 @@
 							<br />
 
 							<b:panelGrid columns="2">
-								<b:inputText value="#{ImovelControl.imovel.bloco }"
-									label="Quadra/Bloco" size="25" maxlength="5" />
-								<b:inputText value="#{ImovelControl.imovel.numero }"
-									label="Número" render-label="true" maxlength="7" />
+								<b:inputText value="#{CadastradosControl.cadastrado.nome }"
+									label="Nome" size="40" maxlength="5" />
+								<b:inputText value="#{CadastradosControl.cadastrado.cpf}"
+									label="CPF" maxlength="11" mask="000.000.000-00"/>
 							</b:panelGrid>
 							<b:inputText value="#{ImovelControl.imovel.tamanholote }"
 								label="Tamanho" mask="numeric" />

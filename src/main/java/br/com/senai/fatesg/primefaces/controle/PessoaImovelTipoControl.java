@@ -12,18 +12,20 @@ import org.springframework.context.annotation.Scope;
 
 import br.com.ambientinformatica.ambientjsf.util.UtilFaces;
 import br.com.senai.fatesg.primefaces.entidade.Empresa;
+import br.com.senai.fatesg.primefaces.entidade.PessoaImovelTipo;
 import br.com.senai.fatesg.primefaces.persistencia.EmpresaDao;
+import br.com.senai.fatesg.primefaces.persistencia.PessoalImovelTipoDao;
 
-@Named("EmpresaControl")
+@Named("PessoaImovelTipoControl")
 @Scope("conversation")
-public class EmpresaControl {
+public class PessoaImovelTipoControl {
 
-	private Empresa empresa = new Empresa();
+	private PessoaImovelTipo pessoa = new PessoaImovelTipo();
 
 	@Autowired
-	private EmpresaDao empresaDao;
+	private PessoalImovelTipoDao pessoaImovelDao;
 
-	private List<Empresa> empresas = new ArrayList<Empresa>();
+	private List<PessoaImovelTipo> ListapessoaImovel = new ArrayList<PessoaImovelTipo>();
 	
 
 	@PostConstruct
@@ -33,35 +35,36 @@ public class EmpresaControl {
 
 	public void listar(ActionEvent evt) {
 		try {
-			empresas = empresaDao.listar();
+			ListapessoaImovel = pessoaImovelDao.listar();
 		} catch (Exception e) {
 			UtilFaces.addMensagemFaces(e);
 		}
 	}
 	
+	public PessoaImovelTipo getPessoa() {
+		return pessoa;
+	}
+
+	public void setPessoa(PessoaImovelTipo pessoa) {
+		this.pessoa = pessoa;
+	}
+
+	public List<PessoaImovelTipo> getListapessoaImovel() {
+		return ListapessoaImovel;
+	}
+
 	public void incluir(ActionEvent evt) {
 		try {
-			empresaDao.incluir(empresa);
+			pessoaImovelDao.incluir(pessoa);
 			listar(evt);
-			empresa = new Empresa();
+			pessoa = new PessoaImovelTipo();
 		} catch (Exception e) {
 			UtilFaces.addMensagemFaces(e);
 		}
 	}
 	
 
-	public Empresa getEmpresa() {
-		return empresa;
-	}
 
-	public void setEmpresa(Empresa empresa) {
-		this.empresa = empresa;
-	}
-
-
-	public List<Empresa> getEmpresas() {
-		return empresas;
-	}
 	
 }
 

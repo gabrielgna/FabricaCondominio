@@ -27,6 +27,7 @@ public class Imovel {
 	private String bloco;
 	private String statusImovel;
 	private int numero;
+	
 	public float getTamanholote() {
 		return tamanholote;
 	}

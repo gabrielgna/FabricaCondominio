@@ -4,12 +4,15 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 
@@ -27,26 +30,23 @@ public class Cadastrados {
 	@Column(nullable = false)
 	private String cpf;
 
-	@OneToMany
-	@JoinColumn(name = "pessoa_id")
-	private List<PessoaImovelTipo> pessoaimoveltipo;
-
+	@ManyToMany(cascade=CascadeType.ALL)
+	@JoinTable(name="pessoa_tipo",joinColumns={@JoinColumn(name="tipo_id")},
+	inverseJoinColumns={@JoinColumn(name="cadastrado_id")})
+	private List<TipoCadastrado> listPessoaImovelTipo = new ArrayList<TipoCadastrado>();
+		
+	
 	private String email;
 	private String nome;
 	private String celular;
 	private Date datadenascimento;
 	private int statuscadastro;
 
+
+	public void addTipoCadastro(TipoCadastrado tipoCadastrado){
+		listPessoaImovelTipo.add(tipoCadastrado);
+	}
 	
-
-	public List<PessoaImovelTipo> getPessoaimoveltipo() {
-		return pessoaimoveltipo;
-	}
-
-	public void setPessoaimoveltipo(List<PessoaImovelTipo> pessoaimoveltipo) {
-		this.pessoaimoveltipo = pessoaimoveltipo;
-	}
-
 	public String getNome() {
 		return nome;
 	}
@@ -101,6 +101,14 @@ public class Cadastrados {
 
 	public Long getId() {
 		return id;
+	}
+
+	public List<TipoCadastrado> getListPessoaImovelTipo() {
+		return listPessoaImovelTipo;
+	}
+
+	public void setListPessoaImovelTipo(List<TipoCadastrado> listPessoaImovelTipo) {
+		this.listPessoaImovelTipo = listPessoaImovelTipo;
 	}
 
 	

@@ -66,12 +66,14 @@
 							value="Pessoas">
       <b:navLink value="Morador" href="#"></b:navLink>
       <b:navLink value="Associado" href="#"></b:navLink>
-      <b:navLink value="Prestador de Serviço" href="cadPrestadorServ.xhtml"></b:navLink>
+      <b:navLink value="Prestador de Serviço"
+								href="cadPrestadorServ.xhtml"></b:navLink>
     </b:dropMenu></li>
-					<li id="j_idt23" style="cursor: pointer;"><a href="cadImovel.xhtml"
-						role="menuitem" tabindex="0">Imovel</a></li>
-					<li id="j_idt24" style="cursor: pointer;"><a href="Arealazer.xhtml"
-						role="menuitem" tabindex="0">Area de Lazer</a></li>
+					<li id="j_idt23" style="cursor: pointer;"><a
+						href="cadImovel.xhtml" role="menuitem" tabindex="0">Imovel</a></li>
+					<li id="j_idt24" style="cursor: pointer;"><a
+						href="Arealazer.xhtml" role="menuitem" tabindex="0">Area de
+							Lazer</a></li>
 					<li id="j_idt25" style="cursor: pointer;"><a href="#"
 						role="menuitem" tabindex="0">Empresa Prestadora</a></li>
 					<li id="j_idt26" class="dropdown-header" role="presentation">
@@ -91,7 +93,7 @@
 				<b:row styleClass="show-grid">
 					<b:column col-xs="4" col-sm="4" col-md="4"></b:column>
 					<b:column col-xs="4" col-sm="4" col-md="4">
-						<h1>Cadastro de Prestador de Serviços</h1>
+						<h1>Prestador de Serviços</h1>
 					</b:column>
 				</b:row>
 				<div id="j_idt38" class="row placeholders">
@@ -104,31 +106,60 @@
 					</div>
 				</div>
 				<b:form>
+
 					<div id="Formularioladoesquerda" class="formimputs">
 						<b:panel id="cadastroimovelpanel" contentDisabled="false">
+							<h3>Identificação</h3>
 							<font style='font-weight: bold;'> Código </font>
 
 							<h:outputText value="            #{ImovelControl.imovel.id }" />
 							<br />
 							<br />
+							<b:form id="messageForm">
+								<b:panelGrid colSpans="6,6">
+									<b:switch value="#num;{checkboxBean.cbxError}"
+										id="checkboxWithErrorMessage" caption="" label="Status"
+										onchange="ajax:checkboxBean.action();" update="@form" />
+									<b:message />
 
+								</b:panelGrid>
+							</b:form>
 							<b:panelGrid columns="2">
 								<b:inputText value="#{CadastradosControl.cadastrado.nome }"
-									label="Nome" size="40" maxlength="5" />
+									label="Nome" required="true" size="40" maxlength="100" />
 								<b:inputText value="#{CadastradosControl.cadastrado.cpf}"
-									label="CPF" maxlength="11" mask="000.000.000-00"/>
+									label="CPF" required="true" render-label="true" maxlength="15"
+									mask="999.999.999-99" />
 							</b:panelGrid>
-							<b:inputText value="#{ImovelControl.imovel.tamanholote }"
-								label="Tamanho" mask="numeric" />
-
+							<b:panelGrid columns="2">
+								<b:inputText value="#{CadastradosControl.cadastrado.nome }"
+									label="RG" required="true" size="30" maxlength="15" />
+								<b:inputText value="#{CadastradosControl.cadastrado.celular}"
+									label="Celular" required="true" maxlength="15"
+									mask="(99)99999-9999" />
+							</b:panelGrid>
+							<h3>Dados</h3>
+							<b:panelGrid columns="1">
+								<b:dateTimePicker format="MM/DD/YYYY" locale="br"
+									required="true"
+									value="#{CadastradosControl.cadastrado.datadenascimento}"
+									label="Data de Nascimento:" />
+							</b:panelGrid>
+							<h3>Informações</h3>
+							<h:form>
+								<b:dataTable value="#{CadastradosControl.cadastrados}"
+									var="pessoa" class="editablePessoaTable">
+									<b:dataTableColumn value="#{}" />
+									<b:dataTableColumn value="#{}" />
+									<b:dataTableColumn value="#{}" />
+								</b:dataTable>
+							</h:form>
 						</b:panel>
-
-
 						<div id="j_idt38" class="row placeholders">
 							<div id="botaosalvar" class="placeholder col-xs-6 col-sm-6">
-							
-							<b:commandButton value="Salvar" update="cadastroimovelpanel"
-                 actionListener="#{ImovelControl.confirmar}" look="success" />
+
+								<b:commandButton value="Salvar" update="cadastroimovelpanel"
+									actionListener="#{ImovelControl.confirmar}" look="success" />
 							</div>
 
 							<div id="botaocancelar" class="placeholder col-xs-6 col-sm-3">

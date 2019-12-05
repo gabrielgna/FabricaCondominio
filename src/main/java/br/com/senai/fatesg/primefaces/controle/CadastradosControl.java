@@ -9,6 +9,10 @@ import javax.faces.bean.SessionScoped;
 import javax.faces.event.ActionEvent;
 import javax.inject.Named;
 
+
+import org.hibernate.EntityMode;
+import org.hibernate.Session;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import br.com.ambientinformatica.ambientjsf.util.UtilFaces;
@@ -33,6 +37,9 @@ public class CadastradosControl {
 
 	// listas
 	private List<Cadastrados> cadastrados = new ArrayList<Cadastrados>();
+	
+	private String nome;
+	
 
 	private List<TipoCadastrado> listPessoaImovelTipo = new ArrayList<TipoCadastrado>();
 	
@@ -48,9 +55,17 @@ public class CadastradosControl {
 		} catch (Exception e) {
 			UtilFaces.addMensagemFaces(e);
 		}
+	
 	}
 
+	public void PesquisarNome() {
+	  cadastrados=cadastradosDao.buscaPor(this.nome);
+	  System.out.println();
+	}
+	
+	
 	public void confirmar() {
+
 		try {
 			cadastrado.addTipoCadastro(tipocadastrado);
 			cadastradosDao.incluir(cadastrado);
@@ -71,6 +86,12 @@ public class CadastradosControl {
 
 	public List<Cadastrados> getCadastrados() {
 		return cadastrados;
+	}
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 	public TipoCadastrado getTipocadastrado() {

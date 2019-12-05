@@ -68,6 +68,7 @@
       <b:navLink value="Associado" href="#"></b:navLink>
       <b:navLink value="Prestador de Serviço" href="#"></b:navLink>
     </b:dropMenu></li>
+					
 					<li id="j_idt23" style="cursor: pointer;"><a href="cadImovel.xhtml"
 						role="menuitem" tabindex="0">Imovel</a></li>
 					<li id="j_idt24" style="cursor: pointer;"><a href="Arealazer.xhtml"
@@ -97,19 +98,29 @@
 				<div id="j_idt38" class="row placeholders">
 
 					<div id="j_idt39" class="placeholder col-xs-6 col-sm-6 ">
-						<b:button value="Cadastro" href="cadAreaLazer.xhtml" />
+						<b:button id="salv" value="Cadastro" href="cadAreaLazer.xhtml" />
 					</div>
 					<div id="j_idt41" class="placeholder col-xs-6 col-sm-3 ">
-						<b:button value="Listar Areas de Lazer"
-							href="Arealazer.xhtml"/>
+						<b:button id="listAreaLazer" value="Listar Areas de Lazer"
+							href="Arealazer.xhtml" />
 					</div>
-					
+
 				</div>
 				<b:form id="formulario">
 					<h:form>
 						<b:dataTable value="#{AreaDeLazerControl.areasdelazer}" var="car">
 							<b:dataTableColumn value="#{car.nome}" />
 							<b:dataTableColumn value="#{car.local}" />
+							<b:dataTableColumn value="" label="Ações">
+							
+							<b:commandButton value="" icon="edit"  update=""
+                             onclick="" style="height:30px" title="Editar cadastro">
+                            </b:commandButton>
+                            <b:commandButton value="" icon="trash"  update=""
+                             onclick="" look="danger" style="height:30px" title="Excluir cadastro">
+                            </b:commandButton>
+                             </b:dataTableColumn>
+                             
 						</b:dataTable>
 					</h:form>
 

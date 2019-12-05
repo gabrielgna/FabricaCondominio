@@ -108,14 +108,15 @@
 					horizontal="true">
 
 					<h:outputText value="Nome"></h:outputText>
-					<b:inputText large-screen="one-third"
+					<b:inputText name = "nome" large-screen="one-third"
 						value="#{AreaDeLazerControl.areadelazer.nome }" />
 
 					<h:outputText value="Local"></h:outputText>
-					<b:inputText large-screen="two-thirds"
+					<b:inputText name = "local" large-screen="two-thirds"
 						value="#{AreaDeLazerControl.areadelazer.local }" />
 					<div id="j_idt39" class="placeholder col-xs-6 col-sm-6 ">
-					<b:commandButton value="Confirmar" update="formulario"
+					
+					<b:commandButton id = "confirma" value="Confirmar" update="formulario"
 						actionListener="#{AreaDeLazerControl.confirmar }" look="success" />
 					</div>
 					<div id="j_idt41" class="placeholder col-xs-6 col-sm-3">

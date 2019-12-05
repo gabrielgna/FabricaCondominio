@@ -54,7 +54,6 @@ public class CadastradosControl {
 		try {
 			cadastrado.addTipoCadastro(tipocadastrado);
 			cadastradosDao.incluir(cadastrado);
-			listar(null);
 			cadastrado = new Cadastrados();
 		} catch (Exception e) {
 			UtilFaces.addMensagemFaces(e);

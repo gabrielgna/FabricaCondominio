@@ -11,7 +11,6 @@ import javax.inject.Named;
 import javax.persistence.Query;
 
 import org.hibernate.EntityMode;
-import org.hibernate.Query;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;

@@ -4,60 +4,59 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
+import javax.faces.bean.RequestScoped;
 import javax.faces.bean.SessionScoped;
 import javax.faces.event.ActionEvent;
-
 import javax.inject.Named;
-import javax.persistence.Query;
+
 
 import org.hibernate.EntityMode;
 import org.hibernate.Session;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Scope;
 
 import br.com.ambientinformatica.ambientjsf.util.UtilFaces;
 import br.com.senai.fatesg.primefaces.entidade.Cadastrados;
-import br.com.senai.fatesg.primefaces.entidade.PessoaImovelTipo;
+import br.com.senai.fatesg.primefaces.entidade.TipoCadastrado;
 import br.com.senai.fatesg.primefaces.persistencia.CadastradosDao;
-import br.com.senai.fatesg.primefaces.persistencia.PessoalImovelTipoDao;
+import br.com.senai.fatesg.primefaces.persistencia.TipoCadastradosDao;
 
 @Named("CadastradosControl")
-@Scope("conversation")
+@RequestScoped
 public class CadastradosControl {
-//entidades
+	// entidades
 	private Cadastrados cadastrado = new Cadastrados();
 
-	private PessoaImovelTipo pessoatipo = new PessoaImovelTipo();
-	//daos
-  
+	private TipoCadastrado tipocadastrado = new TipoCadastrado();
+
 	@Autowired
 	private CadastradosDao cadastradosDao;
-	
-	@Autowired
-	private PessoalImovelTipoDao pessoaimovetipodao;
 
-	//listas
+	@Autowired
+	private TipoCadastradosDao tipoCadastradoDao;
+
+	// listas
 	private List<Cadastrados> cadastrados = new ArrayList<Cadastrados>();
 	
 	private String nome;
 	
 
-	private List<PessoaImovelTipo> listatipo = new ArrayList<PessoaImovelTipo>();
+	private List<TipoCadastrado> listPessoaImovelTipo = new ArrayList<TipoCadastrado>();
 	
 	@PostConstruct
 	public void init() {
 		listar(null);
 	}
+
 	public void listar(ActionEvent evt) {
 		try {
 			cadastrados = cadastradosDao.listar();
+			listPessoaImovelTipo = tipoCadastradoDao.listar();
 		} catch (Exception e) {
 			UtilFaces.addMensagemFaces(e);
 		}
 	
 	}
-	
-	
 
 	public void PesquisarNome() {
 	  cadastrados=cadastradosDao.buscaPor(this.nome);
@@ -65,21 +64,13 @@ public class CadastradosControl {
 	}
 	
 	
-	public void confirmar(ActionEvent evt) {
+	public void confirmar() {
+
 		try {
+			cadastrado.addTipoCadastro(tipocadastrado);
 			cadastradosDao.incluir(cadastrado);
-			
-			listar(evt);
+			listar(null);
 			cadastrado = new Cadastrados();
-			pessoatipo = new PessoaImovelTipo();
-		} catch (Exception e) {
-			UtilFaces.addMensagemFaces(e);
-		}
-	}
-	
-	public void listarr(ActionEvent evt) {
-		try {
-			Query query = cadastradosDao.getEntityManager().createQuery("SELECT * FROM cadastrados where id=2");
 		} catch (Exception e) {
 			UtilFaces.addMensagemFaces(e);
 		}
@@ -103,7 +94,20 @@ public class CadastradosControl {
 		this.nome = nome;
 	}
 
-	
+	public TipoCadastrado getTipocadastrado() {
+		return tipocadastrado;
+	}
+
+	public void setTipocadastrado(TipoCadastrado tipocadastrado) {
+		this.tipocadastrado = tipocadastrado;
+	}
+
+	public List<TipoCadastrado> getTiposCadastrados() {
+		return listPessoaImovelTipo;
+	}
+
+	public void setTiposCadastrados(List<TipoCadastrado> tiposCadastrados) {
+		this.listPessoaImovelTipo = tiposCadastrados;
+	}
 
 }
-

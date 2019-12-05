@@ -20,7 +20,7 @@ public class Imovel {
 	
 	@OneToMany
 	@JoinColumn(name="imovel_id")
-	private List<PessoaImovelTipo> pessoaimoveltipo;
+	private List<TipoCadastrado> pessoaimoveltipo;
 	
 	
 	private float tamanholote;

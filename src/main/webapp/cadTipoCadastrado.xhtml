@@ -106,7 +106,7 @@
 						<b:button value="Listar Tipo Cadastrado" href="TipoCadastrados.xhtml" />
 					</div>
 				</div>
-				<b:form>
+				<b:form id="formulario">
 					<div id="Formularioladoesquerda" class="formimputs">
 						
 							<b:panelGrid columns="1">
@@ -118,12 +118,12 @@
 						<div id="j_idt38" class="row placeholders">
 							<div id="botaosalvar" class="placeholder col-xs-6 col-sm-6">
 
-								<b:commandButton value="Salvar" update=""
+								<b:commandButton value="Salvar" update="formulario"
 									actionListener="#{TipoCadastradoControl.incluir}" look="success" />
 							</div>
 
 							<div id="botaocancelar" class="placeholder col-xs-6 col-sm-3">
-								<b:button look="danger" value="Cancelar" />
+								<b:button update="formulario" look="danger" value="Cancelar" />
 							</div>
 						</div>
 					</div>

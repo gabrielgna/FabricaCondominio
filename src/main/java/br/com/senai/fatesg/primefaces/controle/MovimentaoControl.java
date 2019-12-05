@@ -19,7 +19,7 @@ import br.com.senai.fatesg.primefaces.persistencia.AreaDeLazerDaoJpa;
 
 @Named("AreaDeLazerControl")
 @Scope("conversation")
-public class AreaDeLazerControl {
+public class MovimentaoControl {
 
 	private AreaDeLazer areadelazer = new AreaDeLazer();
 

@@ -6,7 +6,7 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:p="http://primefaces.org/ui">
 <h:head>
-	<title>Listagem Area de Lazer</title>
+	<title>Relatório Entrada/Saída</title>
 	<link href="css/cadAreaLazerestilo.css" rel="stylesheet" />
 </h:head>
 <h:body style="padding-top: 60px">
@@ -21,7 +21,7 @@
 						class="icon-bar"></span><span class="icon-bar"></span><span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#"><span>Portaria 2000</span></a>
+				<a class="navbar-brand" href="#"><span>Condominium Controller</span></a>
 			</div>
 			<div id="j_idt7_inner"
 				class="collapse navbar-collapse navbar-ex1-collapse">
@@ -64,7 +64,7 @@
 					</li>
 					<li id="j_idt22" class="active" style="cursor: pointer;"><b:dropMenu
 							value="Pessoas">
-      <b:navLink value="Morador" href="cadCadastrados.xhtml"></b:navLink>
+      <b:navLink value="Morador" href="#"></b:navLink>
       <b:navLink value="Associado" href="#"></b:navLink>
       <b:navLink value="Prestador de Serviço" href="#"></b:navLink>
     </b:dropMenu></li>
@@ -92,36 +92,18 @@
 				<b:row styleClass="show-grid">
 					<b:column col-xs="4" col-sm="4" col-md="4"></b:column>
 					<b:column col-xs="4" col-sm="4" col-md="4">
-						<h1>Area Lazer</h1>
+						<h1>Relatório Entrada/Saída</h1>
 					</b:column>
 				</b:row>
-				<div id="j_idt38" class="row placeholders">
-
-					<div id="j_idt39" class="placeholder col-xs-6 col-sm-6 ">
-						<b:button id="salv" value="Cadastro" href="cadAreaLazer.xhtml" />
-					</div>
-					<div id="j_idt41" class="placeholder col-xs-6 col-sm-3 ">
-						<b:button id="listAreaLazer" value="Listar Areas de Lazer"
-							href="Arealazer.xhtml" />
-					</div>
-
-				</div>
+				
 				<b:form id="formulario">
 					<h:form>
 						<b:dataTable value="#{AreaDeLazerControl.areasdelazer}" var="car" print="true"
                row-style-class="">
-							<b:dataTableColumn value="#{car.nome}" />
-							<b:dataTableColumn value="#{car.local}" />
-							<b:dataTableColumn value="" label="Ações">
-							
-							<b:commandButton value="" icon="edit"  update=""
-                             onclick="" style="height:30px" title="Editar cadastro">
-                            </b:commandButton>
-                            <b:commandButton value="" icon="trash"  update=""
-                             onclick="" look="danger"  style="height:30px" title="Excluir cadastro">
-                            </b:commandButton>
-                             </b:dataTableColumn>
-                             
+							<b:dataTableColumn value="#{car.nome}" label="Código Morador" />
+							<b:dataTableColumn value="#{car.local}" label="Código Imovel"/>
+							<b:dataTableColumn value="#{car.local}" label="Horário"/>
+							<b:dataTableColumn value="#{car.local}" label="Movimentação"/>
 						</b:dataTable>
 					</h:form>
 

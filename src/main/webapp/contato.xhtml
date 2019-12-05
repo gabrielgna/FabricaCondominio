@@ -5,7 +5,7 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:a="http://www.ambientinformatica.com.br/jsf2"
-	xmlns:p="http://primefaces.org/ui">
+	xmlns:p="http://primefaces.org/ui" xmlns:b="http://bootsfaces.net/ui">
 	<ui:define name="corpo">
 
 		<p:panel header="Formulário" id="panel">
@@ -24,6 +24,21 @@
 				<p:inputText value="#{ContatoControl.contato.email }"></p:inputText>
 				<p:inputText value="#{ContatoControl.contato.endereco }" size="35"></p:inputText>
 			</h:panelGrid>
+
+
+			<p:inputText value="#{CadastradosControl.nome}"></p:inputText>
+			<p:commandButton
+				actionListener="#{CadastradosControl.PesquisarNome }"
+				value="teste pesquisar" update="formCorpo:panel"></p:commandButton>
+
+			<b:form id="formulario">
+				<h:form>
+					<b:dataTable value="#{CadastradosControl.cadastrados}" var="car">
+						<b:dataTableColumn value="#{car.nome}" />
+						
+					</b:dataTable>
+				</h:form>
+				</b:form>
 		</p:panel>
 
 		<p:dataTable id="contatos" value="#{ContatoControl.contatos }"

@@ -31,20 +31,29 @@ public class CadastradosControl{
 	private CadastradosDao cadastradosDao;
 
 	private List<Cadastrados> cadastrados = new ArrayList<Cadastrados>();
+	
+	private String nome;
+	
 
 	@PostConstruct
 	public void init() {
 		listar(null);
 	}
-
 	public void listar(ActionEvent evt) {
 		try {
 			cadastrados = cadastradosDao.listar();
 		} catch (Exception e) {
 			UtilFaces.addMensagemFaces(e);
 		}
+	
 	}
 
+	public void PesquisarNome() {
+	  cadastrados=cadastradosDao.buscaPor(this.nome);
+	  System.out.println();
+	}
+	
+	
 	public void confirmar(ActionEvent evt) {
 		try {
 			cadastradosDao.alterar(cadastrado);
@@ -65,6 +74,12 @@ public class CadastradosControl{
 
 	public List<Cadastrados> getCadastrados() {
 		return cadastrados;
+	}
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 	

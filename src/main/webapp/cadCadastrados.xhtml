@@ -125,19 +125,18 @@
 					<b:inputText large-screen="two-thirds"
 						value="#{CadastradosControl.cadastrado.cpf }" />
 
-					<h:outputText value="Data Nascimento"></h:outputText>
-					<b:inputText large-screen="two-thirds" mask="dd/mm/yyyy"
-						value="#{CadastradosControl.cadastrado.cpf }" />
 
-					<b:selectOneMenu value="#{PessoaImovelTipoControl.pessoa.tipo}" colMd="3" required="true"
-						label="Selecione o tipo de pessoa:" labelColMd="2" select2="true">
-						<f:selectItem itemLabel="Selecione.." itemValue="" />
-						<f:selectItem itemLabel="Morador" itemValue="1" />
-						<f:selectItem itemLabel="Prestador Servico" itemValue="2" />
-					</b:selectOneMenu>
+					<p:selectOneMenu id="comboTipo" 
+						value="#{CadastradosControl.tipocadastrado.tipo}" style="width:400px"
+						filter="true" filterMatchMode="contains">
+						<f:selectItem itemLabel="Selecione o tipo"
+							noSelectionOption="true" />
+						<f:selectItems value="#{CadastradosControl.tiposCadastrados}" var="tipocad" itemLabel="#{tipocad.tipo}" itemValue="#{tipo}"/>
+					</p:selectOneMenu>
 
 					<b:commandButton value="Confirmar" update="formulario"
-						actionListener="#{CadastradosControl.confirmar }" look="success" />
+						process="formulario"
+						actionListener="#{CadastradosControl.confirmar}" look="success" />
 
 				</b:form>
 			</div>

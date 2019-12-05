@@ -57,8 +57,6 @@ public class CadastradosControl {
 	
 	}
 	
-	
-
 	public void PesquisarNome() {
 	  cadastrados=cadastradosDao.buscaPor(this.nome);
 	  System.out.println();

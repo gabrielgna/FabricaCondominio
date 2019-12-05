@@ -31,4 +31,5 @@ public class CadastradosDaoJpa extends PersistenciaJpa<Cadastrados> implements C
 		}
 	}
 
+	
 }

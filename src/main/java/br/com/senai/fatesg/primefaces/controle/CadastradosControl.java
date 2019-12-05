@@ -8,6 +8,7 @@ import javax.faces.bean.SessionScoped;
 import javax.faces.event.ActionEvent;
 
 import javax.inject.Named;
+import javax.persistence.Query;
 
 import org.hibernate.EntityMode;
 import org.hibernate.Query;
@@ -17,24 +18,33 @@ import org.springframework.context.annotation.Scope;
 
 import br.com.ambientinformatica.ambientjsf.util.UtilFaces;
 import br.com.senai.fatesg.primefaces.entidade.Cadastrados;
+import br.com.senai.fatesg.primefaces.entidade.PessoaImovelTipo;
 import br.com.senai.fatesg.primefaces.persistencia.CadastradosDao;
-import br.com.senai.fatesg.primefaces.persistencia.CadastradosDaoJpa;
+import br.com.senai.fatesg.primefaces.persistencia.PessoalImovelTipoDao;
 
 @Named("CadastradosControl")
 @Scope("conversation")
-public class CadastradosControl{
-
-	
+public class CadastradosControl {
+//entidades
 	private Cadastrados cadastrado = new Cadastrados();
-	
+
+	private PessoaImovelTipo pessoatipo = new PessoaImovelTipo();
+	//daos
+  
 	@Autowired
 	private CadastradosDao cadastradosDao;
+	
+	@Autowired
+	private PessoalImovelTipoDao pessoaimovetipodao;
 
+	//listas
 	private List<Cadastrados> cadastrados = new ArrayList<Cadastrados>();
 	
 	private String nome;
 	
 
+	private List<PessoaImovelTipo> listatipo = new ArrayList<PessoaImovelTipo>();
+	
 	@PostConstruct
 	public void init() {
 		listar(null);
@@ -47,6 +57,8 @@ public class CadastradosControl{
 		}
 	
 	}
+	
+	
 
 	public void PesquisarNome() {
 	  cadastrados=cadastradosDao.buscaPor(this.nome);
@@ -56,9 +68,19 @@ public class CadastradosControl{
 	
 	public void confirmar(ActionEvent evt) {
 		try {
-			cadastradosDao.alterar(cadastrado);
+			cadastradosDao.incluir(cadastrado);
+			
 			listar(evt);
 			cadastrado = new Cadastrados();
+			pessoatipo = new PessoaImovelTipo();
+		} catch (Exception e) {
+			UtilFaces.addMensagemFaces(e);
+		}
+	}
+	
+	public void listarr(ActionEvent evt) {
+		try {
+			Query query = cadastradosDao.getEntityManager().createQuery("SELECT * FROM cadastrados where id=2");
 		} catch (Exception e) {
 			UtilFaces.addMensagemFaces(e);
 		}

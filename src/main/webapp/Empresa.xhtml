@@ -5,8 +5,9 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:p="http://primefaces.org/ui">
+
 <h:head>
-	<title>Listagem Area de Lazer</title>
+	<title>Cadastro Empresa</title>
 	<link href="css/cadAreaLazerestilo.css" rel="stylesheet" />
 </h:head>
 <h:body style="padding-top: 60px">
@@ -21,7 +22,7 @@
 						class="icon-bar"></span><span class="icon-bar"></span><span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#"><span>Portaria 2000</span></a>
+				<a class="navbar-brand" href="#"><span>Portaria Gestion</span></a>
 			</div>
 			<div id="j_idt7_inner"
 				class="collapse navbar-collapse navbar-ex1-collapse">
@@ -52,9 +53,9 @@
 
 	<div id="j_idt17" class="container-fluid">
 		<div id="j_idt18" class="row">
-			<div id="MENU LATERAL ESQUERDO" style="background-color: #222222"
+			<div id="j_idt19" style="background-color: #222222"
 				class="sidebar col-md-2 col-sm-3 ">
-				<ul id="MENU DE BOTOES ESQUERDO" class="nav nav-list ">
+				<ul id="j_idt20" class="nav nav-list ">
 					<li id="j_idt30" class="dropdown-header" role="presentation"><b:navLink
 							href="TelaInicial.xhtml" icon="home" icon-size="4x">
 						</b:navLink></li>
@@ -73,13 +74,9 @@
 					<li id="j_idt24" style="cursor: pointer;"><a
 						href="Arealazer.xhtml" role="menuitem" tabindex="0">Area de
 							Lazer</a></li>
-					<li id="j_idt25" style="cursor: pointer;"><a href="#"
-					<li id="j_idt23" style="cursor: pointer;"><a href="cadImovel.xhtml"
-						role="menuitem" tabindex="0">Imovel</a></li>
-					<li id="j_idt24" style="cursor: pointer;"><a href="Arealazer.xhtml"
-						role="menuitem" tabindex="0">Area de Lazer</a></li>
-					<li id="j_idt25" style="cursor: pointer;"><a href="cadEmpresa.xhtml"
-						role="menuitem" tabindex="0">Empresa Prestadora</a></li>
+					<li id="j_idt25" style="cursor: pointer;"><a
+						href="cadEmpresa.xhtml" role="menuitem" tabindex="0">Empresa
+							Prestadora</a></li>
 					<li id="j_idt26" class="dropdown-header" role="presentation">
 						<H2>Relatorios</H2>
 					</li>
@@ -97,35 +94,24 @@
 				<b:row styleClass="show-grid">
 					<b:column col-xs="4" col-sm="4" col-md="4"></b:column>
 					<b:column col-xs="4" col-sm="4" col-md="4">
-						<h1>Area Lazer</h1>
+						<h1>Empresa</h1>
 					</b:column>
 				</b:row>
+
 				<div id="j_idt38" class="row placeholders">
 
 					<div id="j_idt39" class="placeholder col-xs-6 col-sm-6 ">
-						<b:button id="salv" value="Cadastro" href="cadAreaLazer.xhtml" />
+						<b:button value="Novo" href="cadEmpresa.xhtml" />
 					</div>
 					<div id="j_idt41" class="placeholder col-xs-6 col-sm-3 ">
-						<b:button id="listAreaLazer" value="Listar Areas de Lazer"
-							href="Arealazer.xhtml" />
+						<b:button value="Listar Empresas" href="Empresa.xhtml" />
 					</div>
-
 				</div>
 				<b:form id="formulario">
 					<h:form>
-						<b:dataTable value="#{AreaDeLazerControl.areasdelazer}" var="car">
-							<b:dataTableColumn value="#{car.nome}" />
-							<b:dataTableColumn value="#{car.local}" />
-							<b:dataTableColumn value="" label="Ações">
-							
-							<b:commandButton value="" icon="edit"  update=""
-                             onclick="" style="height:30px" title="Editar cadastro">
-                            </b:commandButton>
-                            <b:commandButton value="" icon="trash"  update=""
-                             onclick="" look="danger" style="height:30px" title="Excluir cadastro">
-                            </b:commandButton>
-                             </b:dataTableColumn>
-                             
+						<b:dataTable value="#{EmpresaControl.empresas}" var="car">
+							<b:dataTableColumn value="#{car.nomefantasia}" />
+							<b:dataTableColumn value="#{car.CNPJ}" />
 						</b:dataTable>
 					</h:form>
 
@@ -134,8 +120,8 @@
 		</div>
 	</div>
 
+
 	<script type="text/javascript"
 		src="/Examples/javax.faces.resource/js/collapse.js.jsf?ln=bsf"></script>
-
 </h:body>
 </html>

@@ -36,6 +36,8 @@
         }
     </style>
 
+ 
+
 <body style="padding-top: 60px; background-color: #add;">
 	<form action="j_spring_security_check" method="post">
 
@@ -55,9 +57,8 @@
 			</div>
 
 		</div>
+			
 		
-		
-		
-		
+		</form>
 </body>
 </html>

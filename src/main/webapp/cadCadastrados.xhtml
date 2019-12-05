@@ -6,7 +6,7 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:p="http://primefaces.org/ui">
 <h:head>
-	<title>Listagem Area de Lazer</title>
+	<title>Cadastro Pessoas</title>
 	<link href="css/cadAreaLazerestilo.css" rel="stylesheet" />
 </h:head>
 <h:body style="padding-top: 60px">
@@ -21,7 +21,7 @@
 						class="icon-bar"></span><span class="icon-bar"></span><span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#"><span>Portaria 2000</span></a>
+				<a class="navbar-brand" href="#"><span>Portaria Gestion</span></a>
 			</div>
 			<div id="j_idt7_inner"
 				class="collapse navbar-collapse navbar-ex1-collapse">
@@ -52,9 +52,9 @@
 
 	<div id="j_idt17" class="container-fluid">
 		<div id="j_idt18" class="row">
-			<div id="MENU LATERAL ESQUERDO" style="background-color: #222222"
+			<div id="j_idt19" style="background-color: #222222"
 				class="sidebar col-md-2 col-sm-3 ">
-				<ul id="MENU DE BOTOES ESQUERDO" class="nav nav-list ">
+				<ul id="j_idt20" class="nav nav-list ">
 					<li id="j_idt30" class="dropdown-header" role="presentation"><b:navLink
 							href="TelaInicial.xhtml" icon="home" icon-size="4x">
 						</b:navLink></li>
@@ -73,13 +73,9 @@
 					<li id="j_idt24" style="cursor: pointer;"><a
 						href="Arealazer.xhtml" role="menuitem" tabindex="0">Area de
 							Lazer</a></li>
-					<li id="j_idt25" style="cursor: pointer;"><a href="#"
-					<li id="j_idt23" style="cursor: pointer;"><a href="cadImovel.xhtml"
-						role="menuitem" tabindex="0">Imovel</a></li>
-					<li id="j_idt24" style="cursor: pointer;"><a href="Arealazer.xhtml"
-						role="menuitem" tabindex="0">Area de Lazer</a></li>
-					<li id="j_idt25" style="cursor: pointer;"><a href="cadEmpresa.xhtml"
-						role="menuitem" tabindex="0">Empresa Prestadora</a></li>
+					<li id="j_idt25" style="cursor: pointer;"><a
+						href="cadEmpresa.xhtml" role="menuitem" tabindex="0">Empresa
+							Prestadora</a></li>
 					<li id="j_idt26" class="dropdown-header" role="presentation">
 						<H2>Relatorios</H2>
 					</li>
@@ -95,39 +91,53 @@
 			<div id="j_idt36"
 				class="main col-md-10 col-md-offset-2 col-sm-9 col-sm-offset-3 ">
 				<b:row styleClass="show-grid">
-					<b:column col-xs="4" col-sm="4" col-md="4"></b:column>
+					<b:column col-xs="4" col-sm="4" col-md="4" />
 					<b:column col-xs="4" col-sm="4" col-md="4">
-						<h1>Area Lazer</h1>
+						<h1>Pessoa Morador</h1>
 					</b:column>
 				</b:row>
 				<div id="j_idt38" class="row placeholders">
 
 					<div id="j_idt39" class="placeholder col-xs-6 col-sm-6 ">
-						<b:button id="salv" value="Cadastro" href="cadAreaLazer.xhtml" />
+						<b:button value="Cadastro" href="cadCadastrados.xhtml" />
 					</div>
 					<div id="j_idt41" class="placeholder col-xs-6 col-sm-3 ">
-						<b:button id="listAreaLazer" value="Listar Areas de Lazer"
-							href="Arealazer.xhtml" />
+						<b:button value="Listar Areas de Lazer" href="Cadastrados.xhtml" />
 					</div>
-
 				</div>
-				<b:form id="formulario">
-					<h:form>
-						<b:dataTable value="#{AreaDeLazerControl.areasdelazer}" var="car">
-							<b:dataTableColumn value="#{car.nome}" />
-							<b:dataTableColumn value="#{car.local}" />
-							<b:dataTableColumn value="" label="Ações">
-							
-							<b:commandButton value="" icon="edit"  update=""
-                             onclick="" style="height:30px" title="Editar cadastro">
-                            </b:commandButton>
-                            <b:commandButton value="" icon="trash"  update=""
-                             onclick="" look="danger" style="height:30px" title="Excluir cadastro">
-                            </b:commandButton>
-                             </b:dataTableColumn>
-                             
-						</b:dataTable>
-					</h:form>
+				<b:form id="formulario"
+					class="main col-md-10 col-md-offset-2 col-sm-9 col-sm-offset-3 "
+					horizontal="true">
+
+					<h:outputText value="Nome"></h:outputText>
+					<b:inputText large-screen="one-third"
+						value="#{CadastradosControl.cadastrado.nome }" />
+
+					<h:outputText value="Email"></h:outputText>
+					<b:inputText large-screen="two-thirds"
+						value="#{CadastradosControl.cadastrado.email }" />
+
+					<h:outputText value="Celular"></h:outputText>
+					<b:inputText large-screen="two-thirds"
+						value="#{CadastradosControl.cadastrado.celular }" />
+
+					<h:outputText value="CPF"></h:outputText>
+					<b:inputText large-screen="two-thirds"
+						value="#{CadastradosControl.cadastrado.cpf }" />
+
+					<h:outputText value="Data Nascimento"></h:outputText>
+					<b:inputText large-screen="two-thirds" mask="dd/mm/yyyy"
+						value="#{CadastradosControl.cadastrado.cpf }" />
+
+					<b:selectOneMenu value="#{PessoaImovelTipoControl.pessoa.tipo}" colMd="3" required="true"
+						label="Selecione o tipo de pessoa:" labelColMd="2" select2="true">
+						<f:selectItem itemLabel="Selecione.." itemValue="" />
+						<f:selectItem itemLabel="Morador" itemValue="1" />
+						<f:selectItem itemLabel="Prestador Servico" itemValue="2" />
+					</b:selectOneMenu>
+
+					<b:commandButton value="Confirmar" update="formulario"
+						actionListener="#{CadastradosControl.confirmar }" look="success" />
 
 				</b:form>
 			</div>

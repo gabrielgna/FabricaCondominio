@@ -68,12 +68,6 @@
       <b:navLink value="Associado" href="#"></b:navLink>
       <b:navLink value="Prestador de Serviço" href="#"></b:navLink>
     </b:dropMenu></li>
-					<li id="j_idt23" style="cursor: pointer;"><a
-						href="cadImovel.xhtml" role="menuitem" tabindex="0">Imovel</a></li>
-					<li id="j_idt24" style="cursor: pointer;"><a
-						href="Arealazer.xhtml" role="menuitem" tabindex="0">Area de
-							Lazer</a></li>
-					<li id="j_idt25" style="cursor: pointer;"><a href="#"
 					<li id="j_idt23" style="cursor: pointer;"><a href="cadImovel.xhtml"
 						role="menuitem" tabindex="0">Imovel</a></li>
 					<li id="j_idt24" style="cursor: pointer;"><a href="Arealazer.xhtml"
@@ -97,35 +91,25 @@
 				<b:row styleClass="show-grid">
 					<b:column col-xs="4" col-sm="4" col-md="4"></b:column>
 					<b:column col-xs="4" col-sm="4" col-md="4">
-						<h1>Area Lazer</h1>
+						<h1>Imovel</h1>
 					</b:column>
 				</b:row>
 				<div id="j_idt38" class="row placeholders">
 
 					<div id="j_idt39" class="placeholder col-xs-6 col-sm-6 ">
-						<b:button id="salv" value="Cadastro" href="cadAreaLazer.xhtml" />
+						<b:button value="Cadastro" href="cadImovel.xhtml" />
 					</div>
 					<div id="j_idt41" class="placeholder col-xs-6 col-sm-3 ">
-						<b:button id="listAreaLazer" value="Listar Areas de Lazer"
-							href="Arealazer.xhtml" />
+						<b:button value="Listar Imoveis"
+							href="Imovel.xhtml"/>
 					</div>
-
 				</div>
 				<b:form id="formulario">
 					<h:form>
-						<b:dataTable value="#{AreaDeLazerControl.areasdelazer}" var="car">
-							<b:dataTableColumn value="#{car.nome}" />
-							<b:dataTableColumn value="#{car.local}" />
-							<b:dataTableColumn value="" label="Ações">
-							
-							<b:commandButton value="" icon="edit"  update=""
-                             onclick="" style="height:30px" title="Editar cadastro">
-                            </b:commandButton>
-                            <b:commandButton value="" icon="trash"  update=""
-                             onclick="" look="danger" style="height:30px" title="Excluir cadastro">
-                            </b:commandButton>
-                             </b:dataTableColumn>
-                             
+						<b:dataTable value="#{ImovelControl.imoveis}" var="car">
+							<b:dataTableColumn value="#{car.bloco}" />
+							<b:dataTableColumn value="#{car.numero}" />
+							<b:dataTableColumn value="#{car.tamanholote}" />
 						</b:dataTable>
 					</h:form>
 

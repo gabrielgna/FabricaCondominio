@@ -117,9 +117,12 @@
 							<b:commandButton value="" icon="edit"  update=""
                              onclick="" style="height:30px" title="Editar cadastro">
                             </b:commandButton>
-                            <b:commandButton value="" icon="trash"  update=""
-                             onclick="" look="danger"  style="height:30px" title="Excluir cadastro">
+                            
+                            
+                            <b:commandButton actionListener="#{AreaDeLazerControl.excluiagora }"  icon="trash" look="danger" title="Excluir cadastro" update="formulario">
+                             <f:setPropertyActionListener value="#{car}" target="#{AreaDeLazerControl.excluirArea}"/>
                             </b:commandButton>
+                            
                              </b:dataTableColumn>
                              
 						</b:dataTable>

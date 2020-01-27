@@ -93,7 +93,7 @@
 				<b:row styleClass="show-grid">
 					<b:column col-xs="4" col-sm="4" col-md="4" />
 					<b:column col-xs="4" col-sm="4" col-md="4">
-						<h1>Pessoa Morador</h1>
+						<h1>Cadastro Pessoas</h1>
 					</b:column>
 				</b:row>
 				<div id="j_idt38" class="row placeholders">
@@ -102,7 +102,7 @@
 						<b:button value="Cadastro" href="cadCadastrados.xhtml" />
 					</div>
 					<div id="j_idt41" class="placeholder col-xs-6 col-sm-3 ">
-						<b:button value="Listar Areas de Lazer" href="Cadastrados.xhtml" />
+						<b:button value="Listar Cadastrados" href="TelaInicial.xhtml" />
 					</div>
 				</div>
 				<b:form id="formulario"
@@ -118,11 +118,11 @@
 						value="#{CadastradosControl.cadastrado.email }" />
 
 					<h:outputText value="Celular"></h:outputText>
-					<b:inputText large-screen="two-thirds"
+					<b:inputText large-screen="two-thirds" mask="(99)99999-9999"
 						value="#{CadastradosControl.cadastrado.celular }" />
 
 					<h:outputText value="CPF"></h:outputText>
-					<b:inputText large-screen="two-thirds"
+					<b:inputText large-screen="two-thirds" mask="999.999.999-99"
 						value="#{CadastradosControl.cadastrado.cpf }" />
 
 

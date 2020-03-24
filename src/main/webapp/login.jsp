@@ -38,7 +38,8 @@
 
  
 
-<body style="padding-top: 60px; background-color: #add;">
+<body style="
+padding-top: 60px; background-color: #add;">
 	<form action="j_spring_security_check" method="post">
 
 		<div class="form-signin" >

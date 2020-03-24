@@ -17,7 +17,7 @@ import br.com.senai.fatesg.primefaces.entidade.AreaDeLazer;
 import br.com.senai.fatesg.primefaces.persistencia.AreaDeLazerDao;
 import br.com.senai.fatesg.primefaces.persistencia.AreaDeLazerDaoJpa;
 
-@Named("AreaDeLazerControl")
+@Named("MovimentacaoControl")
 @Scope("conversation")
 public class MovimentaoControl {
 

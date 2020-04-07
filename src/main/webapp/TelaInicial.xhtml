@@ -12,7 +12,7 @@
 <ui:define name="conteudo">
 	<div id="MEIO TELA"
 		 class="main col-md-10 col-md-offset-2 col-sm-9 col-sm-offset-3 ">
-		<b:row styleClass="show-grid">
+		    <b:row styleClass="show-grid">
 			<b:column col-xs="4"/>
 			<b:column col-xs="6">
 				<h1>PORTARIA GESTION</h1>
@@ -26,12 +26,18 @@
 			</b:column>
 		</b:row>
 
-		<b:form id="tabela">
+
+		<h:form id="tabela">
 			<b:dataTable value="#{CadastradosControl.cadastrados}" var="cad">
 				<b:dataTableColumn value="#{cad.nome}"/>
 				<b:dataTableColumn value="#{cad.cpf}"/>
+				<p:growl id="growl" life="2000" />
+				<b:dataTableColumn width="20%" >
+					<p:commandButton value="Entrada/Saida" id="ajax" update="growl"  action="#{MovimentacaoControl.Confirmar(cad)}"  styleClass="ui-priority-primary" />
+				</b:dataTableColumn>
 			</b:dataTable>
-		</b:form>
+
+		</h:form>
 
 	</div>
 
